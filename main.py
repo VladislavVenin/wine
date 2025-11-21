@@ -2,6 +2,7 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 import datetime
 import pandas
 import collections
+import argparse
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 
@@ -12,6 +13,11 @@ def main():
     )
 
     template = env.get_template('template.html')
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--path', type=str, default='wines.xlsx')
+    args = parser.parse_args()
+    path = args.path
 
     now = datetime.datetime.now()
     founded_date = 1920
@@ -26,7 +32,7 @@ def main():
     if age_last > 10 and age_last <= 20:
         age_suffix = "лет"
 
-    wines_df = pandas.read_excel('wines.xlsx',
+    wines_df = pandas.read_excel(path,
                                  sheet_name='Лист1',
                                  keep_default_na="").to_dict(orient='records')
 
