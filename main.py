@@ -24,7 +24,7 @@ if age_last in [2, 3, 4] or str(age)[-1] in ['2', '3', '4']:
 if age_last > 10 and age_last <= 20:
     age_suffix = "лет"
 
-wines_df = pandas.read_excel('wine3.xlsx',
+wines_df = pandas.read_excel('wines.xlsx',
                              sheet_name='Лист1',
                              keep_default_na="").to_dict(orient='records')
 
