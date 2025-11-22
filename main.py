@@ -44,7 +44,7 @@ def main():
     rendered_page = template.render(
         age=age,
         age_suffix=age_suffix,
-        wines=wines,
+        menu=wines,
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
