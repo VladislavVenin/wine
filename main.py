@@ -14,8 +14,8 @@ def main():
 
     template = env.get_template('template.html')
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--path', type=str, default='wines.xlsx')
+    parser = argparse.ArgumentParser(description='Скрипт для обновления и запуска сайта')
+    parser.add_argument('--path', type=str, default='wines.xlsx', help="Указать альтернативный путь до таблицы с данными")
     args = parser.parse_args()
     path = args.path
 
